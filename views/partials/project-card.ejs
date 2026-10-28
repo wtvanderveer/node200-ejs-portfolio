@@ -1,0 +1,19 @@
+<div class="col-md-6 col-lg-4">
+    <div class="card h-100 project-card">
+        <div class="card-body d-flex flex-column">
+            <h3 class="h5 card-title"><%= project.name %></h3>
+            <p class="card-text text-body-secondary"><%= project.description %></p>
+            <div class="mb-3">
+                <% project.tech.forEach((tech) => { %>
+                    <span class="badge badge-neon me-1"><%= tech %></span>
+                <% }) %>
+            </div>
+            <div class="mt-auto d-flex gap-2">
+                <a class="btn btn-sm btn-outline-neon" href="<%= project.github %>" target="_blank" rel="noopener">Code</a>
+                <% if (project.live) { %>
+                    <a class="btn btn-sm btn-neon" href="<%= project.live %>" target="_blank" rel="noopener">Live site</a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<%- include('partials/header', { title: 'Contact | Travis Vanderveer' }) %>
+
+<section class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <h1 class="mb-2">Get in touch</h1>
+            <p class="text-body-secondary mb-4">Leave your info and I'll reach out soon.</p>
+
+            <% if (error) { %>
+                <div class="alert alert-danger" role="alert"><%= error %></div>
+            <% } %>
+
+            <form action="/thanks" method="POST" class="card card-body shadow-sm">
+                <div class="row g-3">
+                    <div class="col-sm-6">
+                        <label class="form-label" for="firstName">First name</label>
+                        <input class="form-control" id="firstName" name="firstName" type="text" value="<%= contact.firstName || '' %>" autocomplete="given-name" required>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-label" for="lastName">Last name</label>
+                        <input class="form-control" id="lastName" name="lastName" type="text" value="<%= contact.lastName || '' %>" autocomplete="family-name" required>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label" for="email">Email</label>
+                        <input class="form-control" id="email" name="email" type="email" value="<%= contact.email || '' %>" autocomplete="email" required>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-neon w-100" type="submit">Send</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<%- include('partials/footer') %>

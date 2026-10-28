@@ -1,0 +1,13 @@
+<%- include('partials/header', { title: 'Thank You | Travis Vanderveer' }) %>
+
+<section class="container py-5 text-center">
+    <div class="thanks-check mx-auto mb-4" aria-hidden="true">&#10003;</div>
+    <h1 class="display-5 fw-bold text-neon">Thank you, <%= contact.firstName %> <%= contact.lastName %>!</h1>
+    <p class="lead text-body-secondary">I got your info and will reach out to <strong class="text-neon"><%= contact.email %></strong> soon.</p>
+    <div class="d-flex justify-content-center gap-2 mt-4">
+        <a class="btn btn-neon" href="/portfolio">Check out my work</a>
+        <a class="btn btn-outline-neon" href="/">Back home</a>
+    </div>
+</section>
+
+<%- include('partials/footer') %>

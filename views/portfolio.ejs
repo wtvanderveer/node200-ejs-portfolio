@@ -1,0 +1,13 @@
+<%- include('partials/header', { title: 'Portfolio | Travis Vanderveer' }) %>
+
+<section class="container py-5">
+    <h1 class="mb-2">Portfolio</h1>
+    <p class="text-body-secondary mb-4">Projects I've built. More on <a href="https://github.com/wtvanderveer" target="_blank" rel="noopener">GitHub</a>.</p>
+    <div class="row g-4">
+        <% projects.forEach((project) => { %>
+            <%- include('partials/project-card', { project }) %>
+        <% }) %>
+    </div>
+</section>
+
+<%- include('partials/footer') %>
